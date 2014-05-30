@@ -75,15 +75,15 @@ $
 
 Така можем да се ориентираме, кой метод на интерфейса да имплементираме, преди да продължим с разработката на нашия custom stream wrapper.
 
-При текущото съдържание на `public/debug.php`:
+При текущото съдържание на `public/decorator.php`:
 
 ```php
 <?php
 require_once 'Bootstrap.php';
 
-stream_wrapper_register('mydebug', '\StreamWrapper\Debug');
+stream_wrapper_register('my', '\StreamWrapper\Decorator');
 
-$fp = fopen('mydebug://notes_do.jpg', 'r');
+$fp = fopen('my://do.jpg', 'r');
 
 while(!feof($fp)){
     echo fread($fp, 8192) . "\n";
